@@ -1,0 +1,12 @@
+.container {
+  max-width: 500px;
+}
+
+.spinner {
+  width: 120px;
+  margin: 20px auto;
+}
+
+.hidden {
+  display: none;
+}
