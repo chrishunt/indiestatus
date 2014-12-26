@@ -2,6 +2,12 @@ require "sinatra"
 require "json"
 require_relative "src/orders_finder"
 
+get "/" do
+  content_type "text/plain"
+
+  "Nothing to see here. Visit /you@example.com/1234,5678,9012"
+end
+
 get "/:email/:order_numbers" do
   content_type "application/json"
 
