@@ -22,37 +22,7 @@
     <p class="text-center"><img class="spinner" src="img/spinner.gif"></p>
     <p class="alert alert-danger hidden"></p>
 
-    <table class="status hidden table table-striped table-hover">
-      <thead>
-        <tr>
-          <th class="col-xs-1"></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>11641</code></td>
-          <td>
-            <span class="label label-success">5/6</span>&nbsp;
-            In shipping queue
-          </td>
-        </tr>
-        <tr>
-          <td><code>11743</code></td>
-          <td>
-            <span class="label label-default label-lg">1/6</span>&nbsp;
-            In processing queue
-          </td>
-        </tr>
-        <tr>
-          <td><code>11752</code></td>
-          <td>
-            <span class="label label-default">1/6</span>&nbsp;
-            In processing queue
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="js-status-rows"></div>
   </div>
 
   <script src="js/jquery-1.11.2.min.js"></script>
