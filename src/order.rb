@@ -1,5 +1,5 @@
 class Order
-  attr_reader :number, :status
+  attr_reader :number, :status, :description
 
   STATUS_MESSAGE = [
     'In processing queue',
@@ -10,9 +10,10 @@ class Order
     'Shipped'
   ]
 
-  def initialize(number, status)
+  def initialize(number, status, description)
     @number = number
     @status = status
+    @description = description
   end
 
   def progress
