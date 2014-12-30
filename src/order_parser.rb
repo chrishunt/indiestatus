@@ -9,6 +9,12 @@ class OrderParser
     summary[0].to_i
   end
 
+  def description
+    lines[6..-1].map(&:strip).each_slice(2).map do |s|
+      "#{s[1].split.first} #{s[0]}"
+    end.join(", ")
+  end
+
   private
 
   attr_reader :html
