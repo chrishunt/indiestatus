@@ -14,22 +14,24 @@ class OrdersFinder
   end
 
   def orders
-    order_numbers.map { |order_number| order(order_number) }
+    order_numbers.map { |order_number| find_order(order_number) }
   end
 
   private
 
-  def order(order_number)
-    order = Order.new(order_number, order_status(order_number))
+  def find_order(order_number)
+    parser = order_parser(order_number)
+    order = Order.new(order_number, parser.status, parser.description)
 
     {
-      number:   order.number,
+      number: order.number,
       progress: order.progress,
-      message:  order.message
+      message: order.message,
+      description: order.description
     }
   end
 
-  def order_status(order_number)
+  def order_parser(order_number)
     OrderParser.new(
       OrderRequest.new(
         CONFIG[:indie][:url],
@@ -37,6 +39,6 @@ class OrdersFinder
         email,
         order_number
       ).body
-    ).status
+    )
   end
 end
