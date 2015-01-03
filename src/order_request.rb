@@ -9,15 +9,12 @@ class OrderRequest
   end
 
   def body
-    response.body
+    Net::HTTP.get(uri)
   end
 
   private
 
-  def response
-    Net::HTTP.post_form URI(url),
-      'orderNumber' => number,
-      'Email'       => email,
-      'MerchantID'  => merchant_id
+  def uri
+    URI "#{url}?orderNumber=#{number}&email=#{email}&merchantID=#{merchant_id}"
   end
 end
