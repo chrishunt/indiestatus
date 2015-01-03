@@ -3,9 +3,7 @@ require "json"
 require_relative "src/orders_finder"
 
 get "/" do
-  content_type "text/plain"
-
-  "Nothing to see here. Visit /you@example.com/1234,5678,9012"
+  send_file File.join(settings.public_folder, 'index.html')
 end
 
 get "/:email/:order_numbers" do
