@@ -1,5 +1,5 @@
 var params = location.hash.slice(1).split("/"),
-    url = "http://localhost:5000",
+    url = "",
     email = params[0],
     ids = params[1].split(",");
 
