@@ -31,3 +31,7 @@ You'll see the status of each order:
 ## Contributing
 Please see the [Contributing
 Document](https://github.com/chrishunt/indiestatus/blob/master/CONTRIBUTING.md)
+
+## License
+Copyright (C) 2015 Chris Hunt, [MIT
+License](https://github.com/chrishunt/indiestatus/blob/master/LICENSE.txt)
