@@ -1,5 +1,9 @@
 # Indie Film Status
 
+Are you a film shooter? AWESOME! Find [me on
+Instagram](http://instagram.com/huntca) and say hello, let's be friends.
+:smiley:
+
 Developing and scanning film can take a while, but that's ok. That's all part
 of the fun.
 
