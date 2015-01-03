@@ -27,3 +27,7 @@ http://yourapp.herokuapp.com/#your@email.com/12345,67890
 You'll see the status of each order:
 
 ![](screenshot.png)
+
+## Contributing
+Please see the [Contributing
+Document](https://github.com/chrishunt/indiestatus/blob/master/CONTRIBUTING.md)
