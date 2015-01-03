@@ -9,8 +9,6 @@ end
 get "/:email/:order_numbers" do
   content_type "application/json"
 
-  response["Access-Control-Allow-Origin"] = "*"
-
   { orders: orders }.to_json
 end
 
