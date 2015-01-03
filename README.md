@@ -17,14 +17,16 @@ $ git push yourapp master
 
 ## Check order status
 
-Once your app is deployed on Heroku, provide your email address and order numbers in the
-URL:
+Once your app is deployed on Heroku, provide your email address and order
+numbers in the URL.
 
 ```html
 http://yourapp.herokuapp.com/#your@email.com/12345,67890
 ```
 
-You'll see the status of each order:
+**protip:** If you bookmark this URL and keep the bookmark updated with your
+current orders, you won't have to remember anything. The status of all your
+orders can be checked quickly.
 
 ![](screenshot.png)
 
