@@ -15,6 +15,6 @@ class OrderRequest
   private
 
   def uri
-    URI "#{url}?orderNumber=#{number}&email=#{email}&merchantID=#{merchant_id}"
+    URI "#{url}?ordernumber=#{number}&email=#{email}&merchantid=#{merchant_id}"
   end
 end
