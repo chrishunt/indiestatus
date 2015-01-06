@@ -14,10 +14,14 @@ class OrdersFinder
   end
 
   def orders
-    order_numbers.map { |order_number| find_order(order_number) }
+    all_orders.sort_by { |order| order[:progress] }.reverse
   end
 
   private
+
+  def all_orders
+    order_numbers.map { |order_number| find_order(order_number) }
+  end
 
   def find_order(order_number)
     parser = order_parser(order_number)
