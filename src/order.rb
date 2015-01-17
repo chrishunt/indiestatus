@@ -2,13 +2,13 @@ class Order
   attr_reader :number, :status, :description
 
   STATUS_MESSAGE = [
+    'Received',
     'In processing queue',
     'In scanning queue',
     'In correction queue',
     'In upload queue',
     'In shipping queue',
-    'Shipped',
-    'Received'
+    'Shipped'
   ]
 
   def initialize(number, status, description)
@@ -18,10 +18,10 @@ class Order
   end
 
   def progress
-    "(#{status}/#{STATUS_MESSAGE.count})"
+    "(#{status + 1}/#{STATUS_MESSAGE.count})"
   end
 
   def message
-    STATUS_MESSAGE.fetch(status - 1)
+    STATUS_MESSAGE.fetch(status)
   end
 end
