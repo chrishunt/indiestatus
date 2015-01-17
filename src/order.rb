@@ -7,7 +7,8 @@ class Order
     'In correction queue',
     'In upload queue',
     'In shipping queue',
-    'Shipped'
+    'Shipped',
+    'Received'
   ]
 
   def initialize(number, status, description)
