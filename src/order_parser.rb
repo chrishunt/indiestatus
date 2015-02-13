@@ -10,8 +10,8 @@ class OrderParser
   end
 
   def description
-    lines[6..-1].map(&:strip).each_slice(2).map do |s|
-      "#{s[1].split.first} #{s[0]}"
+    items_in_order.map do |item|
+      "#{item[1].split.first} #{item[0]}"
     end.join(", ")
   end
 
@@ -21,6 +21,10 @@ class OrderParser
 
   def summary
     lines[3]
+  end
+
+  def items_in_order
+    lines[(lines.find_index("Ordered") + 1)..-1].map(&:strip).each_slice(2)
   end
 
   def lines
