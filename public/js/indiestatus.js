@@ -1,13 +1,11 @@
 var params = location.hash.slice(1).split("/"),
-    url = "",
     email = params[0],
-    ids = params[1].split(",");
+    ids = params[1];
 
-function showError() {
-  $(".alert").html(
-    "Sorry. There was an error. Are your order numbers correct?"
-  ).removeClass("hidden");
-};
+function showError(message) {
+  hideSpinner();
+  $(".alert").html(message).removeClass("hidden");
+}
 
 function showStatus(data) {
   $.each(data.orders, function(_, order) {
@@ -28,15 +26,24 @@ function showStatus(data) {
       ].join("")
     );
   });
-};
 
-$.get(
-  [url, email, ids.join(",")].join("/")
-).done(function(data) {
   $(".status").removeClass("hidden");
-  showStatus(data);
-}).fail(function() {
-  showError();
-}).always(function() {
+}
+
+function hideSpinner(){
   $(".spinner").addClass("hidden");
-});
+}
+
+if (email && ids) {
+  $.get(
+    ["", email, ids].join("/")
+  ).done(function(data) {
+    showStatus(data);
+  }).fail(function() {
+    showError("There was an error. Are your order numbers correct?");
+  }).always(function() {
+    hideSpinner();
+  });
+} else {
+  showError("Both an email address and order number are required.");
+}
